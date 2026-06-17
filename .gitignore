@@ -1,0 +1,16 @@
+.DS_Store
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Never commit local secrets or machine-specific overrides.
+*.local
+.env
+.env.*
+secrets/
+
+# Backups created by editors or setup scripts.
+*~
+*.bak
+*.backup
