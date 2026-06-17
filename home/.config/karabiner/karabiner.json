@@ -1,0 +1,93 @@
+{
+  "profiles": [
+    {
+      "name": "Default profile",
+      "selected": true,
+      "virtual_hid_keyboard": {
+        "keyboard_type_v2": "iso"
+      },
+      "simple_modifications": [
+        {
+          "from": { "key_code": "caps_lock" },
+          "to": [ { "key_code": "left_control" } ]
+        }
+      ],
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Top-Left: Hyper (Hold) / Backtick (Tap)",
+            "manipulators": [
+              {
+                "description": "Top-Left (physically) to Hyper/Backtick",
+                "from": {
+                  "key_code": "non_us_backslash",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "to": [
+                  {
+                    "key_code": "left_command",
+                    "modifiers": [ "left_control", "left_option", "left_shift" ]
+                  }
+                ],
+                "to_if_alone": [
+                  { "key_code": "non_us_backslash" }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Hyper Key App Shortcuts",
+            "manipulators": [
+              {
+                "description": "Hyper + 1: PyCharm",
+                "from": {
+                  "key_code": "1",
+                  "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                },
+                "to": [ { "shell_command": "open -a 'PyCharm'" } ],
+                "type": "basic"
+              },
+              {
+                "description": "Hyper + 2: Codex",
+                "from": {
+                  "key_code": "2",
+                  "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                },
+                "to": [ { "shell_command": "open -a 'Codex'" } ],
+                "type": "basic"
+              },
+              {
+                "description": "Hyper + 3: Claude",
+                "from": {
+                  "key_code": "3",
+                  "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                },
+                "to": [ { "shell_command": "open -a 'Claude'" } ],
+                "type": "basic"
+              },
+	      {
+                "description": "Hyper + 4: Safari",
+                "from": {
+                  "key_code": "4",
+                  "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                },
+                "to": [ { "shell_command": "open -a 'Safari'" } ],
+                "type": "basic"
+              },
+              {
+                "description": "Hyper + 0: Terminal",
+                "from": {
+                  "key_code": "0",
+                  "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                },
+                "to": [ { "shell_command": "open -a 'Terminal'" } ],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

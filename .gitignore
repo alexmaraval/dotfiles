@@ -10,6 +10,12 @@
 .env.*
 secrets/
 
+# Tool auth/state files that often sit next to portable config.
+home/.config/gh/hosts.yml
+home/.config/poolside/credentials.json
+home/.config/wandb/settings
+home/.ssh/
+
 # Backups created by editors or setup scripts.
 *~
 *.bak
